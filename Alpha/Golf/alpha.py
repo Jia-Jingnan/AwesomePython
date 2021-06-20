@@ -11,6 +11,8 @@
 
 import unittest
 from Alpha.Golf.bravo import MathMethod
+# from Alpha.Golf.HTMLTestRunner import HTMLTestRunner
+from Alpha.Golf.HTMLTestRunner_Chart import HTMLTestRunner
 
 # 写一个测试类
 class TestMathMethod(unittest.TestCase): # 继承unittest中的TestCase类
@@ -21,13 +23,14 @@ class TestMathMethod(unittest.TestCase): # 继承unittest中的TestCase类
         res = MathMethod(1, 1).add()
         print("1+1=", res)
         # 添加断言
-        self.assertEqual(2,res)
+        self.assertEqual(2, res)
 
     def test_add_two_zero(self):
         res = MathMethod(0, 0).add()
         print('0+0=', res)
         # msg是用例执行失败是才会显示
-        self.assertEqual(1,res,"两个0相加出错了")
+        self.assertEqual(0, res, "两个0相加出错了")
+
 
 #
 # if __name__ == '__main__':
@@ -35,8 +38,12 @@ class TestMathMethod(unittest.TestCase): # 继承unittest中的TestCase类
 suite = unittest.TestSuite() # 实例化一个suite
 suite.addTest(TestMathMethod('test_add_two_positive'))
 
-with open("delta.txt", 'w+', encoding='UTF-8') as file:
-    runner = unittest.TextTestRunner(stream=file, verbosity=0)
+# with open("delta.txt", 'w+', encoding='UTF-8') as file:
+#     runner = unittest.TextTestRunner(stream=file, verbosity=0)
+#     runner.run(suite)
+
+with open("foxtrot.html", 'wb') as file:
+    runner = HTMLTestRunner(stream=file, verbosity=1, title=None, description=None)
     runner.run(suite)
 
 
