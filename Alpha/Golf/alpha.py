@@ -20,10 +20,14 @@ class TestMathMethod(unittest.TestCase): # 继承unittest中的TestCase类
     def test_add_two_positive(self):
         res = MathMethod(1, 1).add()
         print("1+1=", res)
+        # 添加断言
+        self.assertEqual(2,res)
 
     def test_add_two_zero(self):
         res = MathMethod(0, 0).add()
         print('0+0=', res)
+        # msg是用例执行失败是才会显示
+        self.assertEqual(1,res,"两个0相加出错了")
 
 #
 # if __name__ == '__main__':
