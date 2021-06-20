@@ -32,6 +32,11 @@ class TestMathMethod(unittest.TestCase): # 继承unittest中的TestCase类
 #
 # if __name__ == '__main__':
 #     unittest.main()
+suite = unittest.TestSuite() # 实例化一个suite
+suite.addTest(TestMathMethod('test_add_two_positive'))
 
+with open("delta.txt", 'w+', encoding='UTF-8') as file:
+    runner = unittest.TextTestRunner(stream=file, verbosity=0)
+    runner.run(suite)
 
 
