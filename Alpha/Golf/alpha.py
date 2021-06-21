@@ -42,7 +42,7 @@ suite.addTest(TestMathMethod('test_add_two_positive'))
 #     runner = unittest.TextTestRunner(stream=file, verbosity=0)
 #     runner.run(suite)
 
-with open("foxtrot.html", 'wb') as file:
+with open("echo.html", 'wb') as file:
     runner = HTMLTestRunner(stream=file, verbosity=1, title=None, description=None)
     runner.run(suite)
 
