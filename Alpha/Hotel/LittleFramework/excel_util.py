@@ -42,7 +42,7 @@ class ExcelUtil():
             param['data'] = sheet.cell(i, 3).value
 
             # 存入字典
-            param['expected'] = sheet.cell(i, 4).value
+            param['excepted'] = sheet.cell(i, 4).value
 
             # 将所有的测试用例添加到测试用例列表中
             params.append(param)
@@ -54,7 +54,7 @@ class ExcelUtil():
 if __name__ == '__main__':
 
     # 实例化对象
-    bravo = ExcelUtil('bravo.xlsx', 'case')
+    bravo = ExcelUtil('bravo.xlsx', 'test')
     # 调用函数
     params = bravo.get_param()
     print(params)
