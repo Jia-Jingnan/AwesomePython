@@ -54,7 +54,7 @@ class ExcelUtil():
 if __name__ == '__main__':
 
     # 实例化对象
-    bravo = ExcelUtil('bravo.xlsx', 'case')
+    bravo = ExcelUtil('bravo.xlsx', 'test')
     # 调用函数
     params = bravo.get_param()
     print(params)
