@@ -6,27 +6,40 @@
 import unittest
 from Alpha.Hotel.LittleFramework.alpha import HttpRequest
 from Alpha.Hotel.LittleFramework.delta import GetData
+from ddt import ddt, data
+from Alpha.Hotel.LittleFramework_02.excel_util import ExcelUtil
 
 
+# 实例化对象
+bravo = ExcelUtil('bravo.xlsx', 'test')
+# 调用函数
+params = bravo.get_param()
+
+print(params)
+
+@ddt
 class TestHttp(unittest.TestCase):
 
-    def __init__(self, methodName, url, method, data, expected):
-        super(TestHttp, self).__init__(methodName) # 保留父类的方法
-        self.url = url
-        self.method = method
-        self.data = data
-        self.expected = expected
+    # 使用ddt，不在需要超继承
+    # 超继承
+    # def __init__(self, methodName, url, method, data, expected):
+    #     super(TestHttp, self).__init__(methodName) # 保留父类的方法
+    #     self.url = url
+    #     self.method = method
+    #     self.data = data
+    #     self.expected = expected
 
     def setUp(self):
         pass
 
     #用例 1
-    def test_api(self):
-            res = HttpRequest().request(self.url, self.data, self.method, getattr(GetData, 'Cookie'))
+    @data(*params)
+    def test_api(self, param):
+            res = HttpRequest().request(param['url'], eval(param['data']), param['method'], getattr(GetData, 'Cookie'))
             if res.cookies:
                 setattr(GetData, 'Cookie', res.cookies)
             try:
-                self.assertEqual(self.expected, res.json()['status'])
+                self.assertEqual(param['excepted'], res.json()['status'])
             except AssertionError as e:
                 print('test_login_normal error is {}'.format(e))
                 raise e
@@ -35,3 +48,4 @@ class TestHttp(unittest.TestCase):
 
     def tearDown(self):
         pass
+
