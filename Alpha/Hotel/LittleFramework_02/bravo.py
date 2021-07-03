@@ -13,9 +13,9 @@ from Alpha.Hotel.LittleFramework_02.excel_util import ExcelUtil
 # 实例化对象
 bravo = ExcelUtil('bravo.xlsx', 'test')
 # 调用函数
-params = bravo.get_param()
+cases = bravo.get_param(case_ids=[1])
 
-print(params)
+print(cases)
 
 @ddt
 class TestHttp(unittest.TestCase):
@@ -33,7 +33,7 @@ class TestHttp(unittest.TestCase):
         pass
 
     #用例 1
-    @data(*params)
+    @data(*cases)
     def test_api(self, param):
             res = HttpRequest().request(param['url'], eval(param['data']), param['method'], getattr(GetData, 'Cookie'))
             if res.cookies:
