@@ -31,4 +31,3 @@ print(config.items('CASE_IDS'))
 print(type(config.get('MARVEL', 'name')))
 print(type(config.get('MARVEL', 'num')))
 
-

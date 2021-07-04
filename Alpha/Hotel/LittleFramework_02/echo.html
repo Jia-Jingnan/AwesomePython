@@ -463,9 +463,9 @@
         
     <div class='page-header'>
         <h1 id="title">Unit Test Report</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2021-07-03 10:38:03</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:00.613117</p>
-<p class='attribute'><strong>状态:</strong> 通过 1</p>
+    <p class='attribute'><strong>开始时间:</strong> 2021-07-04 10:31:59</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.012209</p>
+<p class='attribute'><strong>状态:</strong> 错误 1</p>
 
     </div>
     <!--<div style="float: left;width:50%;"><p class='description'></p></div>-->
@@ -479,10 +479,10 @@
         
     <div id="btn-group">
     <div class="btn-group btn-group-sm">
-        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 100.00% }</a>
-        <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误{ 0 }</a>
+        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 0.00% }</a>
+        <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误{ 1 }</a>
         <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 0 }</a>
-        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 1 }</a>
+        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 0 }</a>
         <a class="btn btn-info" onclick='javascript:showCase(3)'>所有{ 1 }</a>
     </div>
     <p></p>
@@ -506,31 +506,92 @@
             <th>错误截图</th>
         </tr>
         
-    <tr class='passClass'>
+    <tr class='errorClass'>
         <td>Alpha.Hotel.LittleFramework_02.bravo.TestHttp</td>
         <td>1</td>
+        <td>0</td>
+        <td>0</td>
         <td>1</td>
-        <td>0</td>
-        <td>0</td>
         <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
         <td>&nbsp;</td>
     </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_api_1</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_api_1</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        通过</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a>
 
-    <div id='div_pt1.1' class="popup_window">
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
                [x]</a>
         </div>
-        <pre>pt1.1: 200
-{"status":0,"msg":"登陆成功","data":{"id":1,"username":"admin","password":"","email":"admin@happymmall.com","phone":"13800138000","question":"问题","answer":"答案","role":1,"createTime":1478473005000,"updateTime":1624170574000},"success":true}
+        <pre>ft1.1: Traceback (most recent call last):
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/connection.py", line 160, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/util/connection.py", line 84, in create_connection
+    raise err
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/util/connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1026, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 964, in send
+    self.connect()
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/connection.py", line 172, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x7fd1fc5bf470&gt;: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/connectionpool.py", line 727, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/urllib3/util/retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=8089): Max retries exceeded with url: /user/login.do (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fd1fc5bf470&gt;: Failed to establish a new connection: [Errno 61] Connection refused',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/ddt.py", line 182, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/jingnan/github/AwesomePython/Alpha/Hotel/LittleFramework_02/bravo.py", line 38, in test_api
+    res = HttpRequest().request(param['url'], eval(param['data']), param['method'], getattr(GetData, 'Cookie'))
+  File "/Users/jingnan/github/AwesomePython/Alpha/Hotel/LittleFramework/alpha.py", line 15, in request
+    res = requests.post(url, data, cookie)
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/jingnan/conf/django_version/django_1.11.7/lib/python3.6/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=8089): Max retries exceeded with url: /user/login.do (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fd1fc5bf470&gt;: Failed to establish a new connection: [Errno 61] Connection refused',))
 </pre>
     </div>
     <!--css div popup end-->
@@ -542,9 +603,9 @@
         <tr id='total_row'>
             <td>总计</td>
             <td>1</td>
+            <td>0</td>
+            <td>0</td>
             <td>1</td>
-            <td>0</td>
-            <td>0</td>
             <td>&nbsp;</td>
             <th>&nbsp;</th>
         </tr>
@@ -580,9 +641,9 @@
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:1, name:'通过'},
+                        {value:0, name:'通过'},
                         {value:0, name:'失败'},
-                        {value:0, name:'错误'}
+                        {value:1, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {

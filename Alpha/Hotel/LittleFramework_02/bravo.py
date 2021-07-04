@@ -13,7 +13,7 @@ from Alpha.Hotel.LittleFramework_02.excel_util import ExcelUtil
 # 实例化对象
 bravo = ExcelUtil('bravo.xlsx', 'test')
 # 调用函数
-cases = bravo.get_param(case_ids=[1])
+cases = bravo.get_param()
 
 print(cases)
 
